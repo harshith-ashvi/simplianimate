@@ -47,6 +47,7 @@ const PostCardForm = ({
     fontColor: string;
     direction: string;
     speed: number;
+    flyersCount: number;
     flyerText: string;
   };
   handleFormDataChange: (key: string, value: string) => void;
@@ -150,6 +151,19 @@ const PostCardForm = ({
           step={1}
           value={[formData.speed]}
           onValueChange={([value]) => handleFormDataChange("speed", value)}
+        />
+      </div>
+      <div>
+        <Label htmlFor="direction">Flyers Count</Label>
+        <Slider
+          defaultValue={[formData.flyersCount]}
+          min={8}
+          max={80}
+          step={1}
+          value={[formData.flyersCount]}
+          onValueChange={([value]) =>
+            handleFormDataChange("flyersCount", value)
+          }
         />
       </div>
       <div className="flex items-center gap-5">

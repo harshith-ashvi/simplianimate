@@ -23,6 +23,7 @@ const PostCards = () => {
     fontColor: "#1616FF",
     direction: "forward",
     speed: 10,
+    flyersCount: 24,
     flyerText: `Let's Goooo!`,
   });
 

@@ -25,6 +25,7 @@ const PostCardCanvas = ({
     fontColor: string;
     direction: string;
     speed: number;
+    flyersCount: number;
     flyerText: string;
   };
 }) => {
@@ -70,7 +71,7 @@ const PostCardCanvas = ({
 
       const fl = 300;
       const shapes = [];
-      const numShapes = 50;
+      const numShapes = formData.flyersCount;
       const words = formData.flyerText.split("\n");
 
       if (!once.current) {
@@ -116,15 +117,6 @@ const PostCardCanvas = ({
           context.textAlign = "center";
           context.textBaseline = "middle";
           context.fillText(shape.char, -100, -100);
-          // context.drawImage(
-          //   imagesRef.current[shape.imageSRC],
-          //   -100,
-          //   -100,
-          //   700,
-          //   700
-          //   // 480,
-          //   // 270
-          // );
 
           context.restore();
 
