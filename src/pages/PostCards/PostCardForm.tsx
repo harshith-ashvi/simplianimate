@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 
 const fonts = [
@@ -45,6 +46,7 @@ const PostCardForm = ({
     fontSize: number;
     fontColor: string;
     direction: string;
+    speed: number;
     flyerText: string;
   };
   handleFormDataChange: (key: string, value: string) => void;
@@ -138,6 +140,17 @@ const PostCardForm = ({
             <Label htmlFor="backward">Backward</Label>
           </div>
         </RadioGroup>
+      </div>
+      <div>
+        <Label htmlFor="direction">Flyers Speed</Label>
+        <Slider
+          defaultValue={[formData.speed]}
+          min={0}
+          max={80}
+          step={1}
+          value={[formData.speed]}
+          onValueChange={([value]) => handleFormDataChange("speed", value)}
+        />
       </div>
       <div className="flex items-center gap-5">
         <Label htmlFor="text">Flyer Text</Label>

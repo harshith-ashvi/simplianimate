@@ -22,12 +22,13 @@ const PostCards = () => {
     fontSize: 200,
     fontColor: "#1616FF",
     direction: "forward",
+    speed: 10,
     flyerText: `Let's Goooo!`,
   });
 
   const handlePressBack = () => {};
 
-  const handleFormDataChange = (key: string, value: string) => {
+  const handleFormDataChange = (key: string, value: string | number) => {
     setFormData((prevState) => ({ ...prevState, [key]: value }));
   };
 

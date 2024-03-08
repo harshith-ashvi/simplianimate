@@ -24,10 +24,10 @@ const PostCardCanvas = ({
     fontSize: number;
     fontColor: string;
     direction: string;
+    speed: number;
     flyerText: string;
   };
 }) => {
-  // console.log("flyerText", formData.flyerText.split("\n"));
   const [canvasDimension, setCanvasDimesnion] = useState({
     width: (height * 9) / 16,
     height: height,
@@ -70,7 +70,8 @@ const PostCardCanvas = ({
 
       const fl = 300;
       const shapes = [];
-      const numShapes = 24;
+      const numShapes = 50;
+      const words = formData.flyerText.split("\n");
 
       if (!once.current) {
         // once.current = true;
@@ -84,8 +85,7 @@ const PostCardCanvas = ({
             x: utils.randomRange(-2000, 2000),
             y: utils.randomRange(-2000, 2000),
             z: utils.randomRange(0, 10000),
-            // char: String.fromCharCode(utils.randomRange(65, 91)),
-            char: formData.flyerText,
+            char: words[utils.randomInt(0, words.length - 1)],
           });
         }
 
@@ -129,12 +129,12 @@ const PostCardCanvas = ({
           context.restore();
 
           if (formData.direction === "forward") {
-            shape.z -= 10;
+            shape.z -= formData.speed;
             if (shape.z < 0) {
               shape.z = 10000;
             }
           } else {
-            shape.z += 10;
+            shape.z += formData.speed;
             if (shape.z > 10000) {
               shape.z = 0;
             }
