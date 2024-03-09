@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import ProgressScreen from "@/components/progressScreen";
 import TemplateNavbar from "@/components/template-navbar";
 
 import TextFlyersCanvas from "./TextFlyersCanvas";
 import TextFlyersForm from "./TextFlyersForm";
+
+const downloadDuration = 8; //in seconds
 
 const TextFlyers = () => {
   const [downloadFile, setDownloadFile] = useState({
@@ -15,6 +18,7 @@ const TextFlyers = () => {
     fileName: "",
     fileFormat: "",
   });
+  const [isDownloading, setIsDownloading] = useState(false);
   const [canvasDimension, setCanvasDimesnion] = useState({
     width: window.innerWidth * 0.85,
     height: window.innerHeight - 45,
@@ -40,6 +44,27 @@ const TextFlyers = () => {
     flyersCount: 24,
     flyerText: `Let's Goooo!`,
   });
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let timerId;
+    if (isDownloading) {
+      timerId = setInterval(() => {
+        setProgress((prev) => prev + 1);
+      }, 100);
+    }
+
+    return function cleanup() {
+      clearInterval(timerId);
+    };
+  }, [isDownloading]);
+
+  const toggleDownloading = () => {
+    setIsDownloading(!isDownloading);
+    if (isDownloading) {
+      setProgress(0);
+    }
+  };
 
   const handlePressBack = () => {};
 
@@ -49,6 +74,7 @@ const TextFlyers = () => {
 
   const handleExportAnimation = (fileName: string, fileFormat: string) => {
     setDownloadFile({ canDownload: true, fileName, fileFormat });
+    toggleDownloading();
   };
 
   const resetFileDownload = () =>
@@ -63,6 +89,11 @@ const TextFlyers = () => {
 
   return (
     <div style={{ height: "inherit" }}>
+      <ProgressScreen
+        isDownloading={isDownloading}
+        downloadDuration={downloadDuration}
+        progress={progress}
+      />
       <TemplateNavbar
         screenResolution={formData.screenResolution}
         handlePressBack={handlePressBack}
@@ -81,9 +112,11 @@ const TextFlyers = () => {
           <TextFlyersCanvas
             width={canvasDimension.width / 100}
             height={canvasDimension.height}
+            downloadDuration={downloadDuration}
             formData={formData}
             downloadFile={downloadFile}
             resetFileDownload={resetFileDownload}
+            toggleDownloading={toggleDownloading}
           />
         </ResizablePanel>
       </ResizablePanelGroup>

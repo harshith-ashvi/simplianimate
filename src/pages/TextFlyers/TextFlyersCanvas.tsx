@@ -13,12 +13,15 @@ const aspectRatio: {
 const TextFlyersCanvas = ({
   width,
   height,
+  downloadDuration,
   formData,
   downloadFile,
   resetFileDownload,
+  toggleDownloading,
 }: {
   width: number;
   height: number;
+  downloadDuration: number;
   formData: {
     screenResolution: string;
     backgroundColor: string;
@@ -36,6 +39,7 @@ const TextFlyersCanvas = ({
     fileFormat: string;
   };
   resetFileDownload: () => void;
+  toggleDownloading: () => void;
 }) => {
   const [canvasDimension, setCanvasDimesnion] = useState({
     width: (height * 9) / 16,
@@ -162,7 +166,7 @@ const TextFlyersCanvas = ({
     // rec.onstop = () => exportVid(new Blob(chunks, { type: "video/mp4" }));
 
     rec.start();
-    setTimeout(() => rec.stop(), 8000); // stop recording in 3s
+    setTimeout(() => rec.stop(), downloadDuration * 1000); // stop recording in 3s
   };
 
   function exportVid(blob) {
@@ -170,6 +174,7 @@ const TextFlyersCanvas = ({
       `${downloadFile.fileName}.${downloadFile.fileFormat}` ??
       `video.${downloadFile.fileFormat}`;
     FileSaver.saveAs(blob, fileNameAndFormat);
+    toggleDownloading();
   }
 
   useEffect(() => {
