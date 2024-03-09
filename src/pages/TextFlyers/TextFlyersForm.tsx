@@ -35,13 +35,12 @@ const fonts = [
   "Comic Sans MS",
 ];
 
-const PostCardForm = ({
+const TextFlyersForm = ({
   formData,
   handleFormDataChange,
 }: {
   formData: {
     backgroundColor: string;
-    flyerType: string;
     font: string;
     fontSize: number;
     fontColor: string;
@@ -67,24 +66,6 @@ const PostCardForm = ({
             handleFormDataChange("backgroundColor", e.target.value)
           }
         />
-      </div>
-      <div className="flex items-center gap-5">
-        <Label htmlFor="color">Flyer type</Label>
-        <Select
-          defaultValue="text"
-          value={formData.flyerType}
-          onValueChange={(value) => handleFormDataChange("flyerType", value)}
-        >
-          <SelectTrigger className="col-span-3">
-            <SelectValue placeholder="Select flyer type" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="text">Text</SelectItem>
-              <SelectItem value="images">Images</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
       </div>
       <div className="flex items-center gap-5">
         <Label htmlFor="color">Font</Label>
@@ -179,4 +160,4 @@ const PostCardForm = ({
   );
 };
 
-export default PostCardForm;
+export default TextFlyersForm;

@@ -10,7 +10,7 @@ const aspectRatio: {
   Square: { aspectRatioWidth: 1, aspectRatioHeight: 1 },
 };
 
-const PostCardCanvas = ({
+const TextFlyersCanvas = ({
   width,
   height,
   formData,
@@ -22,7 +22,6 @@ const PostCardCanvas = ({
   formData: {
     screenResolution: string;
     backgroundColor: string;
-    flyerType: string;
     font: string;
     fontSize: number;
     fontColor: string;
@@ -197,4 +196,4 @@ const PostCardCanvas = ({
   );
 };
 
-export default PostCardCanvas;
+export default TextFlyersCanvas;

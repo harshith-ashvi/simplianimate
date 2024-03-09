@@ -1,10 +1,10 @@
 import "./App.css";
-import PostCards from "./pages/PostCards";
+import TextFlyers from "./pages/TextFlyers";
 
 function App() {
   return (
     <div style={{ height: "calc(100vh - 45px)" }}>
-      <PostCards />
+      <TextFlyers />
     </div>
   );
 }

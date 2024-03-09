@@ -6,10 +6,10 @@ import {
 } from "@/components/ui/resizable";
 import TemplateNavbar from "@/components/template-navbar";
 
-import PostCardCanvas from "./PostCardCanvas";
-import PostCardForm from "./PostCardForm";
+import TextFlyersCanvas from "./TextFlyersCanvas";
+import TextFlyersForm from "./TextFlyersForm";
 
-const PostCards = () => {
+const TextFlyers = () => {
   const [downloadFile, setDownloadFile] = useState({
     canDownload: false,
     fileName: "",
@@ -22,7 +22,6 @@ const PostCards = () => {
   const [formData, setFormData] = useState({
     screenResolution: "Portrait",
     backgroundColor: "#ffffff",
-    flyerType: "text",
     font: "Arial",
     fontSize: 200,
     fontColor: "#1616FF",
@@ -62,14 +61,14 @@ const PostCards = () => {
       />
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel defaultSize={15}>
-          <PostCardForm
+          <TextFlyersForm
             formData={formData}
             handleFormDataChange={handleFormDataChange}
           />
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel onResize={handlegetSize}>
-          <PostCardCanvas
+          <TextFlyersCanvas
             width={canvasDimension.width / 100}
             height={canvasDimension.height}
             formData={formData}
@@ -82,4 +81,4 @@ const PostCards = () => {
   );
 };
 
-export default PostCards;
+export default TextFlyers;
