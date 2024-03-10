@@ -47,7 +47,8 @@ const TextFlyers = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let timerId;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let timerId: any;
     if (isDownloading) {
       timerId = setInterval(() => {
         setProgress((prev) => prev + 1);

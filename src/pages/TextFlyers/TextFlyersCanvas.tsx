@@ -1,3 +1,4 @@
+/* eslint-disable no-inner-declarations */
 import { utils } from "@/utils";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import FileSaver from "file-saver";
@@ -82,14 +83,13 @@ const TextFlyersCanvas = ({
       const height = canvasRef.current.height;
 
       const fl = 300;
-      const shapes = [];
+      const shapes: { x: number; y: number; z: number; char: string }[] = [];
       const numShapes = formData.flyersCount;
       const words = formData.flyerText.split("\n");
 
-      if (!once.current) {
+      if (!once.current && context) {
         // once.current = true;
         context.clearRect(0, 0, width, height);
-        // context.clearRect(-width / 2, -height / 2, width, height);
         context.fillStyle = formData.backgroundColor;
         context.fillRect(0, 0, width, height);
 
@@ -106,6 +106,7 @@ const TextFlyersCanvas = ({
       }
 
       function flyerAnimation() {
+        if (!context) return;
         shapes.sort((a, b) => b.z - a.z);
         context.clearRect(0, 0, width, height);
 
@@ -114,7 +115,12 @@ const TextFlyersCanvas = ({
 
         context.save();
         context.translate(width / 2, height / 2);
-        let shape = {};
+        let shape: { x: number; y: number; z: number; char: string } = {
+          x: 0,
+          y: 0,
+          z: 0,
+          char: "",
+        };
         let perspective = 0;
         for (let i = 0; i < numShapes; i++) {
           shape = shapes[i];
@@ -153,7 +159,8 @@ const TextFlyersCanvas = ({
 
   const downloadAnimation = () => {
     if (canvasRef.current === null) return;
-    const chunks = []; // here we will store our recorded media chunks (Blobs)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const chunks: any = []; // here we will store our recorded media chunks (Blobs)
     const stream = canvasRef.current.captureStream(60); // grab our canvas MediaStream
     const options = { mimeType: `video/webm` };
     const rec = new MediaRecorder(stream, options); // init the recorder
@@ -169,7 +176,7 @@ const TextFlyersCanvas = ({
     setTimeout(() => rec.stop(), downloadDuration * 1000); // stop recording in 3s
   };
 
-  function exportVid(blob) {
+  function exportVid(blob: Blob) {
     const fileNameAndFormat =
       `${downloadFile.fileName}.${downloadFile.fileFormat}` ??
       `video.${downloadFile.fileFormat}`;
@@ -182,6 +189,7 @@ const TextFlyersCanvas = ({
       downloadAnimation();
       resetFileDownload();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [downloadFile]);
 
   return (

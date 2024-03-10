@@ -49,7 +49,7 @@ const TextFlyersForm = ({
     flyersCount: number;
     flyerText: string;
   };
-  handleFormDataChange: (key: string, value: string) => void;
+  handleFormDataChange: (key: string, value: string | number) => void;
 }) => {
   return (
     <div
