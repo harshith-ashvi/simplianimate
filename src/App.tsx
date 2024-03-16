@@ -3,6 +3,7 @@ import "./App.css";
 
 import Home from "./pages/Home";
 import TextFlyers from "./pages/TextFlyers";
+import MatrixRain from "./pages/MatrixRain";
 import TextReveal from "./pages/TextReveal";
 
 function App() {
@@ -15,6 +16,14 @@ function App() {
           element={
             <div style={{ height: "calc(100vh - 45px)" }}>
               <TextFlyers />
+            </div>
+          }
+        />
+        <Route
+          path="/matrix-rain"
+          element={
+            <div style={{ height: "calc(100vh - 45px)" }}>
+              <MatrixRain />
             </div>
           }
         />
