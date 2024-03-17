@@ -10,7 +10,7 @@ const aspectRatio: {
   Square: { aspectRatioWidth: 1, aspectRatioHeight: 1 },
 };
 
-class Symbol {
+class EffectSymbol {
   characters: string;
   x: number;
   y: number;
@@ -44,18 +44,24 @@ class Effect {
   canvasHeight: number;
   fontSize: number;
   columns: number;
-  symbols: [];
-  constructor(canvasWidth: number, canvasHeight: number) {
+  symbols: EffectSymbol[];
+  constructor(canvasWidth: number, canvasHeight: number, fontSize: number) {
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
-    this.fontSize = 25;
+    this.fontSize = fontSize;
     this.columns = this.canvasWidth / this.fontSize;
     this.symbols = [];
     this.#initialize();
   }
   #initialize() {
+    this.symbols = [];
     for (let i = 0; i < this.columns; i++) {
-      this.symbols[i] = new Symbol(i, 0, this.fontSize, this.canvasHeight);
+      this.symbols[i] = new EffectSymbol(
+        i,
+        0,
+        this.fontSize,
+        this.canvasHeight
+      );
     }
   }
 }
@@ -75,13 +81,12 @@ const MatrixRainCanvas = ({
   formData: {
     screenResolution: string;
     backgroundColor: string;
-    font: string;
     fontSize: number;
     fontColor: string;
-    direction: string;
-    speed: number;
-    flyersCount: number;
-    flyerText: string;
+    fps: number;
+    textType: string;
+    unicode: string;
+    text: string;
   };
   downloadFile: {
     canDownload: boolean;
@@ -131,35 +136,32 @@ const MatrixRainCanvas = ({
       const width = canvasRef.current.width;
       const height = canvasRef.current.height;
 
-      if (!once.current) {
-        once.current = true;
-        const matrixRainEffect = new Effect(width, height);
+      const matrixRainEffect = new Effect(width, height, formData.fontSize);
 
-        let lastTime = 0;
-        const fps = 15;
-        const nextFrame = 1000 / fps;
-        let timer = 0;
+      let lastTime = 0;
+      const fps = formData.fps;
+      const nextFrame = 1000 / fps;
+      let timer = 0;
 
-        function matrixRainAnimate(timestamp: number) {
-          if (!context) return;
-          const deltaTime = timestamp - lastTime;
-          lastTime = timestamp;
-          if (timer > nextFrame) {
-            context.fillStyle = "rgba(0, 0, 0, 0.05)";
-            context.fillRect(0, 0, width, height);
-            context.textAlign = "center";
-            context.fillStyle = "#0AFF0A";
-            context.font = matrixRainEffect.fontSize + "px monospace";
-            matrixRainEffect.symbols.forEach((symbol) => symbol.draw(context));
-            timer = 0;
-          } else {
-            timer += deltaTime;
-          }
-          requestAnimationFrame(matrixRainAnimate);
+      function matrixRainAnimate(timestamp: number) {
+        if (!context) return;
+        const deltaTime = timestamp - lastTime;
+        lastTime = timestamp;
+        if (timer > nextFrame) {
+          context.fillStyle = "rgba(0, 0, 0, 0.05)";
+          context.fillRect(0, 0, width, height);
+          context.textAlign = "center";
+          context.fillStyle = formData.fontColor;
+          context.font = matrixRainEffect.fontSize + "px monospace";
+          matrixRainEffect.symbols.forEach((symbol) => symbol.draw(context));
+          timer = 0;
+        } else {
+          timer += deltaTime;
         }
-
-        matrixRainAnimate(0);
+        requestAnimationFrame(matrixRainAnimate);
       }
+
+      matrixRainAnimate(0);
     }
   }, [formData, canvasDimension]);
 
