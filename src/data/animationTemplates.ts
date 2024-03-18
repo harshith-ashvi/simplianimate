@@ -1,4 +1,5 @@
 import textFlyers from "@/assets/gif/text-flyers.gif";
+import matrixRain from "@/assets/gif/matrixRain.gif";
 
 export const textBasedAnimation: {
   name: string;
@@ -13,11 +14,11 @@ export const textBasedAnimation: {
   {
     name: "Matrix Rain",
     url: "/matrix-rain",
-    img: textFlyers,
+    img: matrixRain,
   },
-  {
-    name: "Text Reveal",
-    url: "/text-reveal",
-    img: textFlyers,
-  },
+  // {
+  //   name: "Text Reveal",
+  //   url: "/text-reveal",
+  //   img: textFlyers,
+  // },
 ];
