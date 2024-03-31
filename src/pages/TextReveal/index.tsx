@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -10,9 +10,8 @@ import TemplateNavbar from "@/components/template-navbar";
 import TextRevealForm from "./TextRevealForm";
 import TextRevealCanvas from "./TextRevealCanvas";
 
-const downloadDuration = 8; //in seconds
-
 const TextReveal = () => {
+  const downloadDuration = useRef(8); //in seconds
   const [downloadFile, setDownloadFile] = useState({
     canDownload: false,
     fileName: "",
@@ -65,6 +64,9 @@ SimpliAnimate`,
   };
 
   const handleFormDataChange = (key: string, value: string | number) => {
+    if (key === "text") {
+      downloadDuration.current = `${value}`.split("\n").length * 3 + 1.5;
+    }
     setFormData((prevState) => ({ ...prevState, [key]: value }));
   };
 
@@ -87,7 +89,7 @@ SimpliAnimate`,
     <div style={{ height: "inherit" }}>
       <ProgressScreen
         isDownloading={isDownloading}
-        downloadDuration={downloadDuration}
+        downloadDuration={downloadDuration.current}
         progress={progress}
       />
       <TemplateNavbar
@@ -107,7 +109,7 @@ SimpliAnimate`,
           <TextRevealCanvas
             width={canvasDimension.width / 100}
             height={canvasDimension.height}
-            downloadDuration={downloadDuration}
+            downloadDuration={downloadDuration.current}
             formData={formData}
             downloadFile={downloadFile}
             resetFileDownload={resetFileDownload}
