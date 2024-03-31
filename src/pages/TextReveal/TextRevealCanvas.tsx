@@ -221,7 +221,7 @@ const TextRevealCanvas = ({
       animate(0)
     }
     return () => cancelAnimationFrame(requestIdRef.current);
-  }, [formData, canvasDimension]);
+  }, [formData, canvasDimension, downloadFile.canDownload]);
 
   const downloadAnimation = () => {
     if (canvasRef.current === null) return;
