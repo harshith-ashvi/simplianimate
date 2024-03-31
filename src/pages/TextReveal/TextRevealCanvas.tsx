@@ -5,6 +5,12 @@ import FileSaver from "file-saver";
 
 import { aspectRatio } from "@/data/canvas";
 
+const xPositionForSlider = {
+  Portrait: 40,
+  Landscape: 100,
+  Square: 60,
+};
+
 const TextRevealCanvas = ({
   width,
   height,
@@ -81,6 +87,10 @@ const TextRevealCanvas = ({
 
       const width = canvasRef.current.width;
       const height = canvasRef.current.height;
+      const sliderXPosition =
+        xPositionForSlider[
+          formData.screenResolution as keyof typeof xPositionForSlider
+        ];
       let animationType = "expand";
       const words = formData.text.split("\n");
       let wordIndex = 0;
@@ -94,8 +104,8 @@ const TextRevealCanvas = ({
 
       let sliderMoveTime: number | null = null;
       const sliderMoveDuration = 1500; // 1.5 seconds in milliseconds
-      const sliderStartingXPosition = -width / 2 + 30;
-      const sliderEndingXPosition = width / 2 - 30;
+      const sliderStartingXPosition = -width / 2 + sliderXPosition;
+      const sliderEndingXPosition = width / 2 - sliderXPosition;
 
       // Function to draw a rotated rectangle with smooth edges
       function drawRotatedRect(
@@ -147,14 +157,14 @@ const TextRevealCanvas = ({
           context.translate(width / 2, height / 2);
           // Draw a rectangle
           drawRotatedRect(
-            -width / 2 + 30,
+            -width / 2 + sliderXPosition,
             0,
             sliderWidth,
             sliderHeight,
             (10 * Math.PI) / 180
           );
           drawRotatedRect(
-            -width / 2 + 35,
+            -width / 2 + sliderXPosition + 5,
             0,
             width,
             height * 2,
