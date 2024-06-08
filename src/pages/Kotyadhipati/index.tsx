@@ -30,6 +30,7 @@ const Kotyadhipati = () => {
     optionC: string;
     optionD: string;
     timerCount: number;
+    correctOption: string;
   }>({
     screenResolution: "Portrait",
     question: "",
@@ -37,7 +38,8 @@ const Kotyadhipati = () => {
     optionB: "",
     optionC: "",
     optionD: "",
-    timerCount: 10,
+    timerCount: 0,
+    correctOption: "",
   });
   const [progress, setProgress] = useState(0);
 
@@ -63,8 +65,8 @@ const Kotyadhipati = () => {
   };
 
   const handleFormDataChange = (key: string, value: string | number) => {
-    if (key === "text") {
-      downloadDuration.current = `${value}`.split("\n").length * 3 + 1.5;
+    if (key === "timerCount") {
+      downloadDuration.current = Number(value) + 1.5;
     }
     setFormData((prevState) => ({ ...prevState, [key]: value }));
   };

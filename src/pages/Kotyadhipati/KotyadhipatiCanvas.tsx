@@ -6,15 +6,10 @@ import {
   drawOptionsBox,
   drawQuestionBox,
   drawTimerCircle,
+  getCorrectRowAndColumn,
 } from "@/utils/kotyadhipati";
 
 import { aspectRatio } from "@/data/canvas";
-
-// const xPositionForSlider = {
-//   Portrait: 40,
-//   Landscape: 100,
-//   Square: 60,
-// };
 
 const KotyadhipatiCanvas = ({
   width,
@@ -36,6 +31,7 @@ const KotyadhipatiCanvas = ({
     optionC: string;
     optionD: string;
     timerCount: number;
+    correctOption: string;
   };
   downloadFile: {
     canDownload: boolean;
@@ -50,7 +46,7 @@ const KotyadhipatiCanvas = ({
     height: height,
   });
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  // const requestIdRef = useRef(0);
+  const requestIdRef = useRef(0);
 
   useEffect(() => {
     const newHeight = height - 100;
@@ -80,59 +76,90 @@ const KotyadhipatiCanvas = ({
   useLayoutEffect(() => {
     if (canvasRef.current !== null) {
       const context = canvasRef.current.getContext("2d");
-      if (!context) return;
       const width = canvasRef.current.width;
       const height = canvasRef.current.height;
-      context.clearRect(0, 0, width, height);
-
-      context.fillStyle = "#003791";
-      context.fillRect(0, 0, width, height);
-
-      drawQuestionBox(context, width, height, formData.question);
-      drawOptionsBox(context, width, height, 1);
-      drawOptionsBox(context, width, height, 2);
-      // drawOption(context, width, height, 1, formData.optionA, formData.optionB);
-      // drawOption(context, width, height, 2, formData.optionC, formData.optionD);
-
-      const optionBoxHeight = height * 0.03;
-      context.font = `${optionBoxHeight - 8}px calibre`;
-      const widthHalf = width * 0.5;
-      context.fillStyle = "gold";
-      context.fillText("A. ", widthHalf * 0.3, height * 0.74);
-      context.textAlign = "start";
-      context.fillStyle = "white";
-      context.fillText(formData.optionA, widthHalf * 0.35, height * 0.74);
-
-      context.fillStyle = "gold";
-      context.textAlign = "center";
-      context.fillText("B. ", widthHalf + widthHalf * 0.14, height * 0.74);
-      context.textAlign = "start";
-      context.fillStyle = "white";
-      context.fillText(
-        formData.optionB,
-        widthHalf + widthHalf * 0.18,
-        height * 0.74
+      const correctOptionRowColumn = getCorrectRowAndColumn(
+        formData.correctOption
       );
 
-      context.fillStyle = "gold";
-      context.textAlign = "center";
-      context.fillText("C. ", widthHalf * 0.3, height * 0.81);
-      context.textAlign = "start";
-      context.fillStyle = "white";
-      context.fillText(formData.optionC, widthHalf * 0.35, height * 0.81);
+      const startTime = Date.now();
+      const endTime = startTime + formData.timerCount * 1000;
 
-      context.fillStyle = "gold";
-      context.textAlign = "center";
-      context.fillText("D. ", widthHalf + widthHalf * 0.14, height * 0.81);
-      context.textAlign = "start";
-      context.fillStyle = "white";
-      context.fillText(
-        formData.optionD,
-        widthHalf + widthHalf * 0.18,
-        height * 0.81
-      );
+      function animate() {
+        if (!context) return;
+        const currentTime = Date.now();
+        const remainingTime = Math.max(0, endTime - currentTime);
+        const timerCount = Math.ceil(remainingTime / 1000);
 
-      drawTimerCircle(context, width, height, formData.timerCount);
+        context.clearRect(0, 0, width, height);
+
+        context.fillStyle = "#003791";
+        context.fillRect(0, 0, width, height);
+
+        drawQuestionBox(context, width, height, formData.question);
+        drawOptionsBox(
+          context,
+          width,
+          height,
+          1,
+          timerCount === 0,
+          correctOptionRowColumn
+        );
+        drawOptionsBox(
+          context,
+          width,
+          height,
+          2,
+          timerCount === 0,
+          correctOptionRowColumn
+        );
+        // drawOption(context, width, height, 1, formData.optionA, formData.optionB);
+        // drawOption(context, width, height, 2, formData.optionC, formData.optionD);
+
+        const optionBoxHeight = height * 0.03;
+        context.font = `${optionBoxHeight - 8}px calibre`;
+        const widthHalf = width * 0.5;
+        context.fillStyle = "gold";
+        context.fillText("A. ", widthHalf * 0.3, height * 0.74);
+        context.textAlign = "start";
+        context.fillStyle = "white";
+        context.fillText(formData.optionA, widthHalf * 0.35, height * 0.74);
+
+        context.fillStyle = "gold";
+        context.textAlign = "center";
+        context.fillText("B. ", widthHalf + widthHalf * 0.14, height * 0.74);
+        context.textAlign = "start";
+        context.fillStyle = "white";
+        context.fillText(
+          formData.optionB,
+          widthHalf + widthHalf * 0.18,
+          height * 0.74
+        );
+
+        context.fillStyle = "gold";
+        context.textAlign = "center";
+        context.fillText("C. ", widthHalf * 0.3, height * 0.81);
+        context.textAlign = "start";
+        context.fillStyle = "white";
+        context.fillText(formData.optionC, widthHalf * 0.35, height * 0.81);
+
+        context.fillStyle = "gold";
+        context.textAlign = "center";
+        context.fillText("D. ", widthHalf + widthHalf * 0.14, height * 0.81);
+        context.textAlign = "start";
+        context.fillStyle = "white";
+        context.fillText(
+          formData.optionD,
+          widthHalf + widthHalf * 0.18,
+          height * 0.81
+        );
+
+        drawTimerCircle(context, width, height, timerCount);
+        if (remainingTime > 0) {
+          requestIdRef.current = requestAnimationFrame(animate);
+        }
+      }
+      animate();
     }
   }, [formData, canvasDimension, downloadFile.canDownload]);
 

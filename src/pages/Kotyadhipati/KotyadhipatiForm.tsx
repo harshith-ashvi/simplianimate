@@ -1,6 +1,21 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+
+const correctOptions = [
+  { label: "Option A", value: "A" },
+  { label: "Option B", value: "B" },
+  { label: "Option C", value: "C" },
+  { label: "Option D", value: "D" },
+];
 
 const KotyadhipatiForm = ({
   formData,
@@ -14,9 +29,11 @@ const KotyadhipatiForm = ({
     optionC: string;
     optionD: string;
     timerCount: number;
+    correctOption: string;
   };
   handleFormDataChange: (key: string, value: string | number) => void;
 }) => {
+  console.log("formData", formData);
   return (
     <div
       className="p-5"
@@ -83,6 +100,28 @@ const KotyadhipatiForm = ({
             handleFormDataChange("timerCount", Number(e.target.value))
           }
         />
+      </div>
+      <div>
+        <Label htmlFor="fps">Correct Option</Label>
+        <Select
+          value={formData.correctOption}
+          onValueChange={(value) =>
+            handleFormDataChange("correctOption", value)
+          }
+        >
+          <SelectTrigger className="col-span-3">
+            <SelectValue placeholder="Select Correct Option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {correctOptions.map((option) => (
+                <SelectItem key={option.label} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );

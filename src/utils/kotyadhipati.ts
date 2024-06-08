@@ -35,7 +35,9 @@ export const drawOptionsBox = (
   context: CanvasRenderingContext2D,
   width: number,
   height: number,
-  optionsRow: number = 1
+  optionsRow: number = 1,
+  canShowAnswer: boolean = false,
+  correctOptionRowColumn: { row: number; column: number }
 ) => {
   const widthHalf = width * 0.5;
   const questionHeight = height * (optionsRow === 1 ? 0.74 : 0.81);
@@ -51,10 +53,22 @@ export const drawOptionsBox = (
   context.lineTo(widthHalf * 0.9, questionHeight + boxHeight);
   context.lineTo(widthHalf * 0.25, questionHeight + boxHeight);
   context.lineTo(width * 0.1, questionHeight);
+  context.closePath();
+  context.fillStyle = "#00358e";
+  if (
+    canShowAnswer &&
+    optionsRow === correctOptionRowColumn.row &&
+    correctOptionRowColumn.column === 1
+  ) {
+    context.fillStyle = "green";
+  }
+  context.fill();
+
   context.strokeStyle = "gold";
   context.lineWidth = 2;
   context.stroke();
 
+  context.beginPath();
   context.moveTo(widthHalf, questionHeight);
   context.lineTo(widthHalf + widthHalf * 0.02, questionHeight);
   context.lineTo(widthHalf + widthHalf * 0.08, questionHeight - boxHeight);
@@ -67,7 +81,13 @@ export const drawOptionsBox = (
   context.lineTo(widthHalf + widthHalf * 0.02, questionHeight);
   context.closePath();
   context.fillStyle = "#00358e";
-  // context.fillStyle = "red";
+  if (
+    canShowAnswer &&
+    optionsRow === correctOptionRowColumn.row &&
+    correctOptionRowColumn.column === 2
+  ) {
+    context.fillStyle = "green";
+  }
   context.fill();
   context.strokeStyle = "gold";
   context.lineWidth = 2;
@@ -168,4 +188,19 @@ export const drawTimerCircle = (
   context.fillStyle = "gold";
   context.textAlign = "center";
   context.fillText(`${timerCount}`, centerX, height * 0.6);
+};
+
+export const getCorrectRowAndColumn = (option: string) => {
+  switch (option) {
+    case "A":
+      return { row: 1, column: 1 };
+    case "B":
+      return { row: 1, column: 2 };
+    case "C":
+      return { row: 2, column: 1 };
+    case "D":
+      return { row: 2, column: 2 };
+    default:
+      return { row: 0, column: 0 };
+  }
 };
