@@ -66,7 +66,7 @@ const Kotyadhipati = () => {
 
   const handleFormDataChange = (key: string, value: string | number) => {
     if (key === "timerCount") {
-      downloadDuration.current = Number(value) + 1.5;
+      downloadDuration.current = Number(value);
     }
     setFormData((prevState) => ({ ...prevState, [key]: value }));
   };
@@ -90,7 +90,7 @@ const Kotyadhipati = () => {
     <div style={{ height: "inherit" }}>
       <ProgressScreen
         isDownloading={isDownloading}
-        downloadDuration={downloadDuration.current}
+        downloadDuration={downloadDuration.current + 5}
         progress={progress}
       />
       <TemplateNavbar

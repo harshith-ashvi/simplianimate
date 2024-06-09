@@ -165,9 +165,7 @@ const KotyadhipatiCanvas = ({
         }
 
         drawTimerCircle(context, width, height, timerCount);
-        if (remainingTime > 0) {
-          requestIdRef.current = requestAnimationFrame(animate);
-        }
+        requestIdRef.current = requestAnimationFrame(animate);
       }
       animate();
     }
@@ -192,7 +190,7 @@ const KotyadhipatiCanvas = ({
     const estimateQuestionReadingTime = estimateReadingTime(formData.question);
     setTimeout(
       () => rec.stop(),
-      (downloadDuration + estimateQuestionReadingTime) * 1000
+      (downloadDuration + estimateQuestionReadingTime + 2) * 1000
     ); // stop recording in 3s
   };
 
