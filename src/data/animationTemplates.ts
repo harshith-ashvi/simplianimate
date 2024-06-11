@@ -23,6 +23,11 @@ export const textBasedAnimation: {
     url: "/text-reveal",
     img: textReveal,
   },
+  {
+    name: "Text Falling",
+    url: "/text-falling",
+    img: textReveal,
+  },
 ];
 
 export const imageBasedAnimation: {

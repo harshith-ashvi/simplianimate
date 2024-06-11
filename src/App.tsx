@@ -6,6 +6,7 @@ import TextFlyers from "./pages/TextFlyers";
 import MatrixRain from "./pages/MatrixRain";
 import TextReveal from "./pages/TextReveal";
 import Kotyadhipati from "./pages/Kotyadhipati";
+import TextFalling from "./pages/textFalling";
 // import ImageFlyers from "./pages/ImageFlyers";
 
 function App() {
@@ -34,6 +35,14 @@ function App() {
           element={
             <div style={{ height: "calc(100vh - 45px)" }}>
               <TextReveal />
+            </div>
+          }
+        />
+        <Route
+          path="/text-falling"
+          element={
+            <div style={{ height: "calc(100vh - 45px)" }}>
+              <TextFalling />
             </div>
           }
         />
