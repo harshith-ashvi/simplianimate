@@ -6,7 +6,7 @@ import TextFlyers from "./pages/TextFlyers";
 import MatrixRain from "./pages/MatrixRain";
 import TextReveal from "./pages/TextReveal";
 import Kotyadhipati from "./pages/Kotyadhipati";
-import TextFalling from "./pages/textFalling";
+import TextFalling from "./pages/TextFalling";
 import TestDemos from "./pages/TestDemo";
 // import ImageFlyers from "./pages/ImageFlyers";
 
