@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "@/components/navbar";
-
+import EmailSubscribe from "@/components/email-subscribe";
 import TemplateCard from "./templateCard";
 
 import {
@@ -52,6 +52,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <EmailSubscribe />
     </>
   );
 };
