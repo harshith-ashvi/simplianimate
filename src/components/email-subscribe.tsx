@@ -22,6 +22,9 @@ const EmailSubscribe = () => {
             data-stacked="false"
             className="flex items-center justify-center max-container gap-2 p-4 max-sm:flex-wrap"
           >
+            <p className="w-3/4 max-md:text-center">
+              Subscribe to stay updated when new template or feature is launched
+            </p>
             <Input
               aria-label="Name"
               name="fields[first_name]"
