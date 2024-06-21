@@ -135,7 +135,7 @@ SimpliAnimate`,
             <div className="md:hidden w-full flex items-center justify-center absolute bottom-0 cursor-pointer py-2 z-50 bg-template-form">
               <div className="bg-template-form flex flex-col items-center">
                 <TextCursorInput
-                  size={18}
+                  size={20}
                   onClick={toggleShowForm}
                   className="bg-template-form"
                 />

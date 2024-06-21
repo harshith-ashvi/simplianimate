@@ -325,7 +325,7 @@ const TextRevealCanvas = ({
         ref={canvasRef}
         width={canvasDimension.width}
         height={canvasDimension.height}
-        className="block bg-white max-md:mb-8"
+        className="block bg-white max-md:mb-10"
       />
     </div>
   );
