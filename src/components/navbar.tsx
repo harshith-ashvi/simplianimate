@@ -54,6 +54,7 @@ const Navbar = () => {
               <a
                 href={link.href}
                 className="text-gray-800 hover:text-orange-400 duration-500"
+                target={link.label === "Request Template" ? "_blank" : ""}
               >
                 {link.label}
               </a>

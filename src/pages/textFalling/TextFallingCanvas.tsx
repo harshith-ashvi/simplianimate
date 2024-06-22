@@ -76,7 +76,7 @@ const TextFallingCanvas = ({
       const width = canvasRef.current.width;
       const height = canvasRef.current.height;
 
-      const bottomLine = height - 100; // The line 10px from the bottom
+      const bottomLine = height - height * 0.1; // The line 10px from the bottom
       // Calculate a dynamic font size based on the canvas height and user input
       const scalingFactor = 0.08; // Adjust this factor as needed
       const dynamicFontSize = Math.min(

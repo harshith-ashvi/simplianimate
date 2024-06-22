@@ -95,12 +95,19 @@ const TextRevealCanvas = ({
       const words = formData.text.split("\n");
       let wordIndex = 0;
 
+      // Calculate a dynamic font size based on the canvas height and user input
+      const scalingFactor = 0.05; // Adjust this factor as needed
+      const dynamicFontSize = Math.min(
+        formData.fontSize,
+        Math.floor(height * scalingFactor)
+      );
+
       let startTime: number | null = null;
       const duration = 1000; // 1 seconds in milliseconds
       const startWidth = 10;
-      const endWidth = 10;
+      const endWidth = width * 0.035;
       const startHeight = 0;
-      const endHeight = 150;
+      const endHeight = height * 0.2;
 
       let sliderMoveTime: number | null = null;
       const sliderMoveDuration = 1500; // 1.5 seconds in milliseconds
@@ -200,7 +207,7 @@ const TextRevealCanvas = ({
           context.textAlign = "center";
           context.textBaseline = "middle";
           context.fillStyle = formData.fontColor;
-          context.font = `${formData.fontSize}px ${formData.font}`;
+          context.font = `${dynamicFontSize}px ${formData.font}`;
           context.fillText(words[wordIndex], 0, 0);
 
           // Draw a rectangle
@@ -247,7 +254,7 @@ const TextRevealCanvas = ({
           context.textAlign = "center";
           context.textBaseline = "middle";
           context.fillStyle = formData.fontColor;
-          context.font = `${formData.fontSize}px ${formData.font}`;
+          context.font = `${dynamicFontSize}px ${formData.font}`;
           context.fillText(words[wordIndex], 0, 0);
 
           // Draw a rectangle

@@ -146,6 +146,13 @@ const MatrixRainCanvas = ({
       const nextFrame = 1000 / fps;
       let timer = 0;
 
+      // Calculate a dynamic font size based on the canvas height and user input
+      const scalingFactor = 0.08; // Adjust this factor as needed
+      const dynamicFontSize = Math.min(
+        formData.fontSize,
+        Math.floor(height * scalingFactor)
+      );
+
       function matrixRainAnimate(timestamp: number) {
         if (!context) return;
         const deltaTime = timestamp - lastTime;
@@ -155,7 +162,7 @@ const MatrixRainCanvas = ({
           context.fillRect(0, 0, width, height);
           context.textAlign = "center";
           context.fillStyle = formData.fontColor;
-          context.font = formData.fontSize + "px monospace";
+          context.font = `${dynamicFontSize}px monospace`;
           matrixRainEffect.symbols.forEach((symbol) =>
             symbol.draw(context, formData.text)
           );
