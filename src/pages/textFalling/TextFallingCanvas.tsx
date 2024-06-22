@@ -77,7 +77,13 @@ const TextFallingCanvas = ({
       const height = canvasRef.current.height;
 
       const bottomLine = height - 100; // The line 10px from the bottom
-      context.font = `${formData.fontSize}px ${formData.font}`;
+      // Calculate a dynamic font size based on the canvas height and user input
+      const scalingFactor = 0.08; // Adjust this factor as needed
+      const dynamicFontSize = Math.min(
+        formData.fontSize,
+        Math.floor(height * scalingFactor)
+      );
+      context.font = `${dynamicFontSize}px ${formData.font}`;
       const textMetrics = context.measureText(formData.text);
       const totalTextWidth = textMetrics.width;
       const startX = (width - totalTextWidth) / 2;
@@ -101,7 +107,7 @@ const TextFallingCanvas = ({
         context.fillRect(0, 0, width, height);
 
         charPositions.forEach((charPos) => {
-          context.font = `${formData.fontSize}px ${formData.font}`;
+          context.font = `${dynamicFontSize}px ${formData.font}`;
           context.fillStyle = formData.fontColor;
           context.fillText(charPos.char, charPos.x, charPos.y);
         });
