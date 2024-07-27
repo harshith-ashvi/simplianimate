@@ -13,7 +13,9 @@ export default function NavBar() {
   return (
     <nav className="flex w-full items-center justify-between px-[20px] py-[16px] lg:container lg:mx-auto lg:px-20">
       <div className="flex items-center">
-        <Activity size={32} />
+        <Link href="/">
+          <Activity size={32} />
+        </Link>
         <div className="hidden lg:flex pl-[74px] gap-x-[56px]">
           {navLinks.map((link) => (
             <Link

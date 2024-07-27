@@ -32,14 +32,14 @@ export default function Templates() {
   return (
     <div className="max-container my-4 flex flex-col items-center">
       <div className="flex items-center justify-center mt-4 mb-2">
-        <Globe />
-        <p className="ml-2 text-2xl font-semibold">Explore the templates</p>
+        <Globe size={28} />
+        <p className="ml-2 text-4xl font-semibold">Explore templates</p>
       </div>
       <p className="mb-4 text-center mx-4">
         More templates coming soon. You can also request for templates.
       </p>
 
-      <div className="flex items-center justify-center flex-wrap gap-2">
+      <div className="flex items-center justify-evenly flex-wrap gap-2">
         {templates.map((template) => (
           <Image
             key={template.alt}
