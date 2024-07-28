@@ -21,7 +21,7 @@ export default function NavBar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-[#36485C] font-medium"
+              className="text-[#36485C] font-medium hover:underline"
             >
               {link.label}
             </Link>
