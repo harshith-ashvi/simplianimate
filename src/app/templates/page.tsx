@@ -12,7 +12,7 @@ export default function Templates() {
       <div className="flex items-center justify-evenly gap-4 flex-wrap mx-4">
         {templatePage.map((template) => (
           <Link
-            href={`app.simplianimate.com/${template.alt}`}
+            href={`https://app.simplianimate.com/${template.alt}`}
             key={template.alt}
             className="hover:translate-x-1 hover:translate-y-1"
           >
