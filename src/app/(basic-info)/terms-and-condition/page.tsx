@@ -40,8 +40,8 @@ export default function TermsAndCondition() {
               remove any copyright or other proprietary notations from the
               materials; or
               <br />
-              transfer the materials to another person or "mirror" the materials
-              on any other server.
+              transfer the materials to another person or &quot;mirror&quot; the
+              materials on any other server.
               <br />
               This license shall automatically terminate if you violate any of
               these restrictions and may be terminated by SimpliAnimate at any

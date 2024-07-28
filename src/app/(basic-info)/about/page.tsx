@@ -16,7 +16,7 @@ export default function About() {
               to the popular TV show &quot;Who Wants to Be a Millionaire,&quot;
               focusing on Kannada grammar and general knowledge. Instead of
               creating a template in Premiere Pro, I decided to build a web app,
-              and that's how this app came to be.
+              and that&apos;s how this app came to be.
             </p>
 
             <p className="mt-2">
