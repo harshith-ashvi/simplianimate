@@ -25,8 +25,8 @@ export default function Testimonials() {
             className="rounded-full border-2 border-emerald-500"
           />
           <p className="w-96 text-lg text-center text-black font-semibold">
-            "Creating short quiz type videos for my class and YouTube has been
-            so easy and I don't have to use any video editor."
+            &quot;Creating short quiz type videos for my class and YouTube has
+            been so easy and I don't have to use any video editor.&quot;
           </p>
           <div>
             <p className="text-center text-black font-bold">
