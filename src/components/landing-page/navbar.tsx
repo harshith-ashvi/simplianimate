@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Activity, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+
+import SimpliAnimate from "/public/full-logo.png";
 
 const navLinks = [
   { label: "Templates", href: "/templates" },
@@ -40,9 +43,9 @@ export default function NavBar() {
       <nav className="flex w-full items-center justify-between px-[20px] py-[16px] lg:container lg:mx-auto lg:px-20">
         <div className="flex items-center">
           <Link href="/">
-            <Activity size={32} />
+            <Image src={SimpliAnimate} alt="SimpliAnimate" height={28} />
           </Link>
-          <div className={"hidden lg:flex pl-[74px] gap-x-[56px]"}>
+          <div className="hidden lg:flex pl-[74px] gap-x-[56px]">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
