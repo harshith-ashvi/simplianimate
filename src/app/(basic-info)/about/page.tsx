@@ -28,14 +28,14 @@ export default function About() {
             </p>
 
             <p className="mt-2">
-              If there&apos;s a
+              If there&apos;s a{" "}
               <a
                 href="https://simplianimate.canny.io/"
                 className="text-blue-500"
                 target="_blank"
               >
                 feature or template
-              </a>
+              </a>{" "}
               you&apos;re looking for that we don&apos;t have yet, please let us
               know. We&apos;re constantly adding new features and templates to
               make this better.
@@ -43,7 +43,7 @@ export default function About() {
 
             <p className="mt-2">
               If you have any questions, you can reach out to me directly at
-              astroashvi@gmail.com 🙂
+              astroashvi@gmail.com
             </p>
           </div>
         </div>

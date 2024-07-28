@@ -1,32 +1,7 @@
-import { Globe } from "lucide-react";
 import Image from "next/image";
+import { Globe } from "lucide-react";
 
-const templates = [
-  {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/matrix.gif",
-    alt: "matrix-rain",
-  },
-  {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-reveal.gif",
-    alt: "text-reveal",
-  },
-  {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/quiz.gif",
-    alt: "quiz",
-  },
-  {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-falling.gif",
-    alt: "text-falling",
-  },
-  {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/gradient-arora.gif",
-    alt: "gradient-arora",
-  },
-  {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-flyers.gif",
-    alt: "text-flyers",
-  },
-];
+import { homePageTemplates } from "@/data/animationTemplates";
 
 export default function Templates() {
   return (
@@ -40,13 +15,14 @@ export default function Templates() {
       </p>
 
       <div className="flex items-center justify-evenly flex-wrap gap-2">
-        {templates.map((template) => (
+        {homePageTemplates.map((template) => (
           <Image
             key={template.alt}
             src={template.src}
             alt={template.alt}
             width={180}
             height={320}
+            unoptimized
           />
         ))}
       </div>
