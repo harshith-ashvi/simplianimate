@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://simplianimate.com/about"),
+  title: "About",
+  description: "Animation templates made easy & simple",
+};
+
 export default function About() {
   return (
     <div className="relative max-w-7xl mx-auto mt-20 pb-20">

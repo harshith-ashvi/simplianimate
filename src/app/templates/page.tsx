@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
 
 import { templatePage } from "@/data/animationTemplates";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://simplianimate.com/templates"),
+  title: "Templates",
+  description: "Animation templates made easy & simple",
+};
 
 export default function Templates() {
   return (
