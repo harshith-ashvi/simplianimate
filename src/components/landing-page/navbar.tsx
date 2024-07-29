@@ -110,6 +110,7 @@ export default function NavBar() {
                   target={
                     ["Login", "Sign Up"].includes(link.label) ? "_blank" : ""
                   }
+                  onClick={toggleOpenNav}
                 >
                   {link.label}
                 </Link>
