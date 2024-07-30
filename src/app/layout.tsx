@@ -17,8 +17,10 @@ export const metadata: Metadata = {
   keywords: ["SimpliAnimate", "animation", "video templates"],
   openGraph: {
     description:
-      "Animation videos made simple and easy through templates. Made videos faster by already created templates",
-    images: [""],
+      "Animation videos made simple and easy through templates. Made videos faster by using templates",
+    images: [
+      "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/general/logo.png",
+    ],
   },
 };
 
