@@ -19,7 +19,7 @@ const navLinks = [
 const mobileNavLinks = [
   { label: "Templates", href: "/templates" },
   { label: "About", href: "/about" },
-  { label: "Login", href: signInUrl },
+  // { label: "Login", href: signInUrl },
   { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
 
@@ -77,7 +77,7 @@ export default function NavBar() {
         </div>
         <div className="flex lg:gap-x-5 gap-x-2">
           <div className="flex items-center gap-x-8">
-            <Link
+            {/* <Link
               href={signInUrl}
               className="hidden lg:inline text-[#36485C] font-medium"
             >
@@ -88,7 +88,7 @@ export default function NavBar() {
               className="lg:px-6 px-2 py-1 font-medium rounded-full bg-gradient-to-b from-green-500 to-green-600 text-white focus:ring-2 focus:ring-green-400 hover:shadow-xl transition duration-200"
             >
               Sign Up
-            </Link>
+            </Link> */}
           </div>
           <div className="lg:hidden duration-200 ease-in">
             {isNavOpen ? (
