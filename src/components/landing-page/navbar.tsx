@@ -13,12 +13,14 @@ const signUpUrl = "https://app.simplianimate.com/signup";
 const navLinks = [
   { label: "Templates", href: "/templates" },
   { label: "About", href: "/about" },
+  { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
 
 const mobileNavLinks = [
   { label: "Templates", href: "/templates" },
   { label: "About", href: "/about" },
   { label: "Login", href: signInUrl },
+  { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
 
 const getClassName = (label: string) => {
@@ -66,13 +68,14 @@ export default function NavBar() {
                 key={link.label}
                 href={link.href}
                 className="text-[#36485C] font-medium hover:underline"
+                target={link.label === "Request Templates" ? "_blank" : ""}
               >
                 {link.label}
               </Link>
             ))}
           </div>
         </div>
-        <div className="flex gap-x-5">
+        <div className="flex lg:gap-x-5 gap-x-2">
           <div className="flex items-center gap-x-8">
             <Link
               href={signInUrl}
@@ -108,7 +111,11 @@ export default function NavBar() {
                   href={link.href}
                   className={getClassName(link.label)}
                   target={
-                    ["Login", "Sign Up"].includes(link.label) ? "_blank" : ""
+                    ["Login", "Sign Up", "Request Templates"].includes(
+                      link.label
+                    )
+                      ? "_blank"
+                      : ""
                   }
                   onClick={toggleOpenNav}
                 >

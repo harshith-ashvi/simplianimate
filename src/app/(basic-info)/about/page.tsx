@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,13 +38,13 @@ export default function About() {
 
             <p className="mt-2">
               If there&apos;s a{" "}
-              <a
+              <Link
                 href="https://simplianimate.canny.io/"
                 className="text-blue-500"
                 target="_blank"
               >
                 feature or template
-              </a>{" "}
+              </Link>{" "}
               you&apos;re looking for that we don&apos;t have yet, please let us
               know. We&apos;re constantly adding new features and templates to
               make this better.
