@@ -16,12 +16,14 @@ const signUpUrl = "https://app.simplianimate.com/signup";
 const navLinks = [
   { label: "Templates", href: "/templates" },
   { label: "About", href: "/about" },
+  { label: "Tools", href: "/tools" },
   { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
 
 const mobileNavLinks = [
   { label: "Templates", href: "/templates" },
   { label: "About", href: "/about" },
+  { label: "Tools", href: "/tools" },
   { label: "Login", href: signInUrl },
   { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
