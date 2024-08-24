@@ -49,7 +49,7 @@ export const FileUpload = ({
   };
 
   const { getRootProps, isDragActive } = useDropzone({
-    multiple: true,
+    multiple: false,
     noClick: true,
     onDrop: handleFileChange,
     onDropRejected,
