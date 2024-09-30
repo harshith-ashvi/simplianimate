@@ -23,6 +23,10 @@ export const homePageTemplates = [
     src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-flyers.gif",
     alt: "text-flyers",
   },
+  {
+    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/kakashi.png",
+    alt: "ascii-art",
+  },
 ];
 
 export const templatePage = [
@@ -55,5 +59,10 @@ export const templatePage = [
     name: "Text Flyers",
     alt: "text-flyers",
     src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/textFlyers.gif",
+  },
+  {
+    name: "ASCII Art",
+    alt: "ascii-art",
+    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/images/ascii-image.png",
   },
 ];

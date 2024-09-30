@@ -12,7 +12,10 @@ export default function Footer() {
         <Link href="/privacy-policy">
           <p className="text-sm hover:underline">Privacy Policy</p>
         </Link>
-        <Link href="https://www.instagram.com/simplianimate" target="_blank">
+        <Link
+          href="https://www.instagram.com/simplianimate_app"
+          target="_blank"
+        >
           <Instagram size={20} />
         </Link>
       </div>
