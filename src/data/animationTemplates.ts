@@ -27,6 +27,10 @@ export const homePageTemplates = [
     src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/kakashi.png",
     alt: "ascii-art",
   },
+  {
+    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/pixel-effect.png",
+    alt: "pixel-art",
+  },
 ];
 
 export const templatePage = [
@@ -64,5 +68,10 @@ export const templatePage = [
     name: "ASCII Art",
     alt: "ascii-art",
     src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/images/ascii-image.png",
+  },
+  {
+    name: "Pixel Art",
+    alt: "pixel-art",
+    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/images/pixel-effect-landscape.png",
   },
 ];
