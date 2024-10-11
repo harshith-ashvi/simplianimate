@@ -1,34 +1,40 @@
+const cloudFlareURL = "https://pub-800708e8cf474afea207d5942b0bebf4.r2.dev";
+
 export const homePageTemplates = [
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/matrix.gif",
+    src: `${cloudFlareURL}/landing-page/matrix.gif`,
     alt: "matrix-rain",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-reveal.gif",
+    src: `${cloudFlareURL}/landing-page/text-reveal.gif`,
     alt: "text-reveal",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/quiz.gif",
+    src: `${cloudFlareURL}/landing-page/quiz.gif`,
     alt: "quiz",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-falling.gif",
+    src: `${cloudFlareURL}/landing-page/text-falling.gif`,
     alt: "text-falling",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/gradient-arora.gif",
+    src: `${cloudFlareURL}/landing-page/gradient-arora.gif`,
     alt: "gradient-arora",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/text-flyers.gif",
+    src: `${cloudFlareURL}/landing-page/text-flyers.gif`,
     alt: "text-flyers",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/kakashi.png",
+    src: `${cloudFlareURL}/landing-page/kakashi.png`,
     alt: "ascii-art",
   },
   {
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/pixel-effect.png",
+    src: `${cloudFlareURL}/landing-page/pixel-effect.png`,
+    alt: "pixel-art",
+  },
+  {
+    src: `${cloudFlareURL}/landing-page/displacement-map.png`,
     alt: "pixel-art",
   },
 ];
@@ -36,42 +42,47 @@ export const homePageTemplates = [
 export const templatePage = [
   {
     name: "Matrix Rain",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/matrixRain.gif",
+    src: `${cloudFlareURL}/gif/matrixRain.gif`,
     alt: "matrix-rain",
   },
   {
     name: "Text Reveal",
     alt: "text-reveal",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/textReveal.gif",
+    src: `${cloudFlareURL}/gif/textReveal.gif`,
   },
   {
     name: "Quiz",
     alt: "quiz",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/kannadadaKotyadipathi.gif",
+    src: `${cloudFlareURL}/gif/kannadadaKotyadipathi.gif`,
   },
   {
     name: "Text Falling",
     alt: "text-falling",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/textFalling.gif",
+    src: `${cloudFlareURL}/gif/textFalling.gif`,
   },
   {
     name: "Gradient Arora",
     alt: "gradient-arora",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/gradientArora.gif",
+    src: `${cloudFlareURL}/gif/gradientArora.gif`,
   },
   {
     name: "Text Flyers",
     alt: "text-flyers",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/gif/textFlyers.gif",
+    src: `${cloudFlareURL}/gif/textFlyers.gif`,
   },
   {
     name: "ASCII Art",
     alt: "ascii-art",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/images/ascii-image.png",
+    src: `${cloudFlareURL}/images/ascii-image.png`,
   },
   {
     name: "Pixel Art",
     alt: "pixel-art",
-    src: "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/images/pixel-effect-landscape.png",
+    src: `${cloudFlareURL}/images/pixel-effect-landscape.png`,
+  },
+  {
+    name: "Displacement Map",
+    alt: "displacement-map",
+    src: `${cloudFlareURL}/images/displacement.png`,
   },
 ];
