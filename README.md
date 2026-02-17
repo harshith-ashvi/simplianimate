@@ -1,8 +1,10 @@
-<p align="center">
-  <img src="https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/logo.png" alt="SimpliAnimate Logo" width="80" />
-</p>
-
 <h1 align="center">SimpliAnimate</h1>
+
+[![X (Twitter)](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/HarshithAshvi) [![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/harshith_ashvi)
+
+<p align="center">
+<img width="1512" height="864" alt="image" src="https://github.com/user-attachments/assets/6bd533e4-b35a-4569-ba32-4b81f92d9606" />
+</p>
 
 <p align="center">
   Animation videos made simple and easy through templates. Create videos faster without complex editing software.
