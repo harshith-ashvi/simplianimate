@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const supabaseUrl = process.env.SUPABASE_ASSET_URL || "";
+const supabaseDomain = supabaseUrl ? new URL(supabaseUrl).hostname : "";
+
 const nextConfig = {
   images: {
-    domains: ["nvahzazenzjsisbjthhb.supabase.co"],
+    domains: supabaseDomain ? [supabaseDomain] : [],
   },
 };
 

@@ -5,12 +5,6 @@
 <h1 align="center">SimpliAnimate</h1>
 
 <p align="center">
-  <a href="https://instagram.com/simplianimate_app">Instagram</a> ·
-  <a href="https://simplianimate.canny.io">Request Templates</a> ·
-  <a href="mailto:simplianimate@gmail.com">Contact</a>
-</p>
-
-<p align="center">
   Animation videos made simple and easy through templates. Create videos faster without complex editing software.
 </p>
 
@@ -18,6 +12,7 @@ SimpliAnimate is a web-based platform that lets you create animation videos usin
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Background](#background)
 - [Features](#features)
   - [Animation Templates](#animation-templates)
@@ -42,17 +37,17 @@ SimpliAnimate was born out of a personal need. The creator, Harshith, built it t
 
 9 ready-to-use animation templates:
 
-| Template | Description |
-|----------|-------------|
-| **Matrix Rain** | Classic falling green text effect |
-| **Text Reveal** | Text animation with reveal effects |
-| **Quiz** | Interactive quiz-style videos |
-| **Text Falling** | Animated falling text effects |
-| **Gradient Aurora** | Beautiful gradient aurora animations |
-| **Text Flyers** | Text with flying/floating effects |
-| **ASCII Art** | Convert images to ASCII art |
-| **Pixel Art** | Pixelated image effects |
-| **Displacement Map** | Image displacement effects |
+| Template             | Description                          |
+| -------------------- | ------------------------------------ |
+| **Matrix Rain**      | Classic falling green text effect    |
+| **Text Reveal**      | Text animation with reveal effects   |
+| **Quiz**             | Interactive quiz-style videos        |
+| **Text Falling**     | Animated falling text effects        |
+| **Gradient Aurora**  | Beautiful gradient aurora animations |
+| **Text Flyers**      | Text with flying/floating effects    |
+| **ASCII Art**        | Convert images to ASCII art          |
+| **Pixel Art**        | Pixelated image effects              |
+| **Displacement Map** | Image displacement effects           |
 
 ### File Converter
 
@@ -66,15 +61,15 @@ A browser-based file converter powered by FFmpeg.wasm — no server uploads, eve
 
 ## Tech Stack
 
-| Category | Technology |
-|----------|-----------|
-| **Framework** | Next.js 14 (App Router) |
-| **Language** | TypeScript |
-| **Styling** | Tailwind CSS |
-| **Animations** | Framer Motion |
-| **UI Components** | Radix UI, Lucide React |
-| **File Processing** | FFmpeg.wasm |
-| **File Upload** | React Dropzone |
+| Category            | Technology              |
+| ------------------- | ----------------------- |
+| **Framework**       | Next.js 14 (App Router) |
+| **Language**        | TypeScript              |
+| **Styling**         | Tailwind CSS            |
+| **Animations**      | Framer Motion           |
+| **UI Components**   | Radix UI, Lucide React  |
+| **File Processing** | FFmpeg.wasm             |
+| **File Upload**     | React Dropzone          |
 
 ## Getting Started
 
@@ -133,17 +128,15 @@ src/
 
 ## Usage
 
-1. Visit [simplianimate.com](https://simplianimate.com)
+1. Visit [simplianimate.com](https://simplianimate.vercel.app)
 2. Browse available templates
-3. Sign up for a free account at [app.simplianimate.com](https://app.simplianimate.com/signup)
+3. Sign up for a free account at [app-simplianimate.netlify.app](https://app-simplianimate.netlify.app/signup)
 4. Select a template, customize inputs, and download your video
-5. Use the [File Converter](https://simplianimate.com/tools/file-converter) for media format conversion
+5. Use the [File Converter](https://simplianimate.vercel.app/tools/file-converter) for media format conversion
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
-
-Have a template idea? Submit it at [simplianimate.canny.io](https://simplianimate.canny.io).
 
 ## License
 

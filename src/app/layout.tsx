@@ -18,9 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     description:
       "Animation videos made simple and easy through templates. Made videos faster by using templates",
-    images: [
-      "https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/general/logo.png",
-    ],
+    images: [`${process.env.SUPABASE_ASSET_URL}/general/logo.png`],
   },
 };
 

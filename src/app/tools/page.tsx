@@ -14,7 +14,7 @@ export default function Tools() {
         >
           <div className="p-2 border border-slate-200 rounded-lg">
             <Image
-              src="https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/file-converter.png"
+              src={`${process.env.SUPABASE_ASSET_URL}/landing-page/file-converter.png`}
               alt="file-converter"
               width={80}
               height={80}

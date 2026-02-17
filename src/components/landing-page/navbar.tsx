@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react";
 
 import SimpliAnimate from "/public/full-logo.png";
 
-const signInUrl = "https://app.simplianimate.com/signin";
-const signUpUrl = "https://app.simplianimate.com/signup";
+const signInUrl = "https://app-simplianimate.netlify.app/signin";
+const signUpUrl = "https://app-simplianimate.netlify.app/signup";
 
 // const signInUrl = "http://localhost:6969/signin";
 // const signUpUrl = "http://localhost:6969/signup";
@@ -17,7 +17,7 @@ const navLinks = [
   { label: "Templates", href: "/templates" },
   { label: "About", href: "/about" },
   { label: "Tools", href: "/tools" },
-  { label: "Request Templates", href: "https://simplianimate.canny.io" },
+  // { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
 
 const mobileNavLinks = [
@@ -25,7 +25,7 @@ const mobileNavLinks = [
   { label: "About", href: "/about" },
   { label: "Tools", href: "/tools" },
   { label: "Login", href: signInUrl },
-  { label: "Request Templates", href: "https://simplianimate.canny.io" },
+  // { label: "Request Templates", href: "https://simplianimate.canny.io" },
 ];
 
 const getClassName = (label: string) => {
@@ -117,7 +117,7 @@ export default function NavBar() {
                   className={getClassName(link.label)}
                   target={
                     ["Login", "Sign Up", "Request Templates"].includes(
-                      link.label
+                      link.label,
                     )
                       ? "_blank"
                       : ""

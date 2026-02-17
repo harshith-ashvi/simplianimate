@@ -14,7 +14,7 @@ export default function EasyUse() {
           <CardBody className="relative group/card w-auto sm:w-[30rem] h-auto rounded-xl border">
             <CardItem translateZ="100" className="w-full">
               <Image
-                src="https://nvahzazenzjsisbjthhb.supabase.co/storage/v1/object/public/assets/landing-page/easy-to-use.gif"
+                src={`${process.env.SUPABASE_ASSET_URL}/landing-page/easy-to-use.gif`}
                 height="297"
                 width="600"
                 className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl p-2"
