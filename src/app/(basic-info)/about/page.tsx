@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://simplianimate.com/about"),
+  metadataBase: new URL("https://simplianimate.vercel.app/about"),
   title: "About",
   description: "Animation templates made easy & simple",
 };

@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { templatePage } from "@/data/animationTemplates";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://simplianimate.com/templates"),
+  metadataBase: new URL("https://simplianimate.vercel.app/templates"),
   title: "Templates",
   description: "Animation templates made easy & simple",
 };
@@ -19,7 +19,7 @@ export default function Templates() {
       <div className="flex items-center justify-evenly gap-4 flex-wrap mx-4">
         {templatePage.map((template) => (
           <Link
-            href={`https://app.simplianimate.com/${template.alt}`}
+            href={`https://app-simplianimate.netlify.app/${template.alt}`}
             key={template.alt}
             className="hover:translate-x-1 hover:translate-y-1"
           >

@@ -8,11 +8,11 @@ export default function TermsAndCondition() {
           <div>
             <p className="mt-2">1. Terms</p>
             <p className="mt-2">
-              By accessing the website at https://simplianimate.com or
-              https://app.simplianimate.com, you are agreeing to be bound by
-              these terms of service, all applicable laws and regulations, and
-              agree that you are responsible for compliance with any applicable
-              local laws.
+              By accessing the website at https://simplianimate.vercel.app or
+              https://app-simplianimate.netlify.app, you are agreeing to be
+              bound by these terms of service, all applicable laws and
+              regulations, and agree that you are responsible for compliance
+              with any applicable local laws.
               <br />
               If you do not agree with any of these terms, you are prohibited
               from using or accessing this site.

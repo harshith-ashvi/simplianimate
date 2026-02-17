@@ -8,7 +8,7 @@ import Footer from "@/components/landing-page/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://simplianimate.com"),
+  metadataBase: new URL("https://simplianimate.vercel.app"),
   title: {
     default: "SimpliAnimate",
     template: "%s | SimpliAnimate",

@@ -128,7 +128,7 @@ src/
 
 ## Usage
 
-1. Visit [simplianimate.com](https://simplianimate.vercel.app)
+1. Visit [simplianimate.vercel.app](https://simplianimate.vercel.app)
 2. Browse available templates
 3. Sign up for a free account at [app-simplianimate.netlify.app](https://app-simplianimate.netlify.app/signup)
 4. Select a template, customize inputs, and download your video

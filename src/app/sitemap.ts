@@ -3,15 +3,15 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://simplianimate.com",
+      url: "https://simplianimate.vercel.app",
       lastModified: new Date(),
     },
     {
-      url: "https://simplianimate.com/about",
+      url: "https://simplianimate.vercel.app/about",
       lastModified: new Date(),
     },
     {
-      url: "https://simplianimate.com/templates",
+      url: "https://simplianimate.vercel.app/templates",
       lastModified: new Date(),
     },
   ];

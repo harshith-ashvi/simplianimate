@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/", "/about", "/templates"],
       disallow: [],
     },
-    sitemap: "https://simplianimate.com/sitemap.xml",
+    sitemap: "https://simplianimate.vercel.app/sitemap.xml",
   };
 }
